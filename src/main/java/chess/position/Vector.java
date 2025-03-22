@@ -37,6 +37,10 @@ public class Vector {
         return Math.abs(x) == Math.abs(y);
     }
 
+    public boolean isOneLength() {
+        return Math.abs(x) <= 1 && Math.abs(y) <= 1;
+    }
+
     public int x() {
         return x;
     }
@@ -57,9 +61,5 @@ public class Vector {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
-    }
-
-    public boolean isOneLength() {
-        return Math.abs(x) <= 1 && Math.abs(y) <= 1;
     }
 }

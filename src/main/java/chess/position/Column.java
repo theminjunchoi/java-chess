@@ -1,7 +1,6 @@
 package chess.position;
 
 import java.util.Arrays;
-import java.util.Map;
 
 public enum Column {
 
@@ -47,7 +46,6 @@ public enum Column {
         if (canMoveLeft(step)) {
             return values()[ordinal() - step];
         }
-
         throw new IllegalStateException("움직일 수 없는 위치입니다.");
     }
 
@@ -63,21 +61,6 @@ public enum Column {
         if (canMoveRight(step)) {
             return values()[ordinal() + step];
         }
-
         throw new IllegalStateException("움직일 수 없는 위치입니다.");
-    }
-
-    public int getInt() {
-        Map<Column, Integer> map = Map.of(
-                A, 1,
-                B, 2,
-                C, 3,
-                D, 4,
-                E, 5,
-                F, 6,
-                G, 7,
-                H, 8
-        );
-        return map.get(this);
     }
 }

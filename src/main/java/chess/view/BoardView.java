@@ -24,7 +24,7 @@ public class BoardView {
         System.out.println();
         System.out.println("   a b c d e f g h");
         for (Row row : Row.values()) {
-            System.out.print(row.ordinal() + 1 + "  ");
+            System.out.print(8 - row.ordinal() + "  ");
             printRow(board, row);
         }
     }

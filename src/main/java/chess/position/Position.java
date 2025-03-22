@@ -178,7 +178,7 @@ public record Position(
     }
 
     public Vector subtract(final Position another) {
-        return new Vector(this.row.getInt() - another.row.getInt(),
-                this.column.getInt() - another.column.getInt());
+        return new Vector(this.row.ordinal() - another.row.ordinal(),
+                this.column.ordinal() - another.column.ordinal());
     }
 }
