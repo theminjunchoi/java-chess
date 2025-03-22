@@ -1,8 +1,9 @@
 package chess.piece;
 
-import chess.Color;
+import chess.board.Board;
+import chess.position.Position;
 
-public class Pawn extends Piece{
+public class Pawn extends Piece {
 
     public Pawn(final Color color) {
         super(color);
@@ -11,5 +12,10 @@ public class Pawn extends Piece{
     @Override
     public Type type() {
         return Type.PAWN;
+    }
+
+    @Override
+    public boolean canMove(final Position start, final Position end, final Board board) {
+        return false;
     }
 }

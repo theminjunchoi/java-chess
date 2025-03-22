@@ -1,12 +1,16 @@
-package chess;
+package chess.board;
 
 import chess.piece.Bishop;
+import chess.piece.Color;
 import chess.piece.King;
 import chess.piece.Knight;
 import chess.piece.Pawn;
 import chess.piece.Piece;
 import chess.piece.Queen;
 import chess.piece.Rook;
+import chess.position.Column;
+import chess.position.Position;
+import chess.position.Row;
 import java.util.HashMap;
 
 public class BoardGenerator {

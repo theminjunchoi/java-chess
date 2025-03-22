@@ -1,5 +1,7 @@
 package chess;
 
+import chess.board.Board;
+import chess.board.BoardGenerator;
 import chess.view.BoardView;
 
 public class Application {

@@ -1,15 +1,34 @@
-package chess;
+package chess.position;
+
+import java.util.Arrays;
 
 public enum Row {
 
-    EIGHT,
-    SEVEN,
-    SIX,
-    FIVE,
-    FOUR,
-    THREE,
-    TWO,
-    ONE;
+    EIGHT(8),
+    SEVEN(7),
+    SIX(6),
+    FIVE(5),
+    FOUR(4),
+    THREE(3),
+    TWO(2),
+    ONE(1);
+
+    private final int value;
+
+    Row(final int value) {
+        this.value = value;
+    }
+
+    public static Row of(int input) {
+        return Arrays.stream(values())
+                .filter(row -> row.value == input)
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException("[ERROR] 잘못된 값을 입력했습니다."));
+    }
+
+    public int getValue() {
+        return value;
+    }
 
     public boolean isTop() {
         return ordinal() == 0;

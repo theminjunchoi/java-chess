@@ -1,11 +1,11 @@
 package chess.view;
 
-import chess.Color;
-import chess.Column;
-import chess.Position;
-import chess.Row;
+import chess.piece.Color;
 import chess.piece.Piece;
 import chess.piece.Type;
+import chess.position.Column;
+import chess.position.Position;
+import chess.position.Row;
 import java.util.Map;
 
 public class BoardView {

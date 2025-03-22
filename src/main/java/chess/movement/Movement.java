@@ -1,4 +1,4 @@
-package chess;
+package chess.movement;
 
 public enum Movement {
     UP(0, 1),

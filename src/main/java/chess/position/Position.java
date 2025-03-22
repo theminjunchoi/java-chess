@@ -1,4 +1,6 @@
-package chess;
+package chess.position;
+
+import chess.movement.Movement;
 
 public record Position(
         Column column,
@@ -166,5 +168,10 @@ public record Position(
             return moveLeft(-step);
         }
         return this;
+    }
+
+    public Vector subtract(final Position another) {
+        return new Vector(this.row.getValue() - another.row.getValue(),
+                this.column.getValue() - another.column.getValue());
     }
 }

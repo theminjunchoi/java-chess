@@ -1,6 +1,7 @@
 package chess.piece;
 
-import chess.Color;
+import chess.board.Board;
+import chess.position.Position;
 
 public class King extends Piece {
 
@@ -11,5 +12,10 @@ public class King extends Piece {
     @Override
     public Type type() {
         return Type.KING;
+    }
+
+    @Override
+    public boolean canMove(final Position start, final Position end, final Board board) {
+        return false;
     }
 }

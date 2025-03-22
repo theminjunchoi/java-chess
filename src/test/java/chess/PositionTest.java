@@ -1,12 +1,5 @@
 package chess;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.stream.Stream;
-
 import static chess.Fixtures.A1;
 import static chess.Fixtures.A2;
 import static chess.Fixtures.A3;
@@ -33,6 +26,14 @@ import static chess.Fixtures.H8;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
+import chess.movement.Movement;
+import chess.position.Position;
+import java.util.stream.Stream;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 
 @DisplayName("위치")
 class PositionTest {
@@ -164,7 +165,7 @@ class PositionTest {
         assertThat(moved).isEqualTo(H1);
     }
 
-    /////
+    /// //
 
     @DisplayName("A8은 맨 위다.")
     @Test

@@ -1,6 +1,7 @@
 package chess.piece;
 
-import chess.Color;
+import chess.board.Board;
+import chess.position.Position;
 
 public abstract class Piece {
 
@@ -10,9 +11,11 @@ public abstract class Piece {
         this.color = color;
     }
 
-    public abstract Type type();
-
     public boolean isColor(final Color color) {
         return this.color.equals(color);
     }
+
+    public abstract Type type();
+
+    public abstract boolean canMove(final Position start, final Position end, final Board board);
 }
