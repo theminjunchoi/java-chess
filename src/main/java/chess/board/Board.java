@@ -66,4 +66,8 @@ public class Board {
         }
         return false;
     }
+
+    public Turn getTurn() {
+        return turn;
+    }
 }

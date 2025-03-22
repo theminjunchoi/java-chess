@@ -15,4 +15,9 @@ public class BlackTurn extends Turn {
     public boolean isSameTeam(final Piece piece) {
         return piece.isColor(Color.BLACK);
     }
+
+    @Override
+    public String getName() {
+        return "흑팀";
+    }
 }

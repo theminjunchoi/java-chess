@@ -15,4 +15,9 @@ public class WhiteTurn extends Turn {
     public boolean isSameTeam(final Piece piece) {
         return piece.isColor(Color.WHITE);
     }
+
+    @Override
+    public String getName() {
+        return "백팀";
+    }
 }

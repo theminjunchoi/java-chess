@@ -6,6 +6,7 @@ import chess.piece.Type;
 import chess.position.Column;
 import chess.position.Position;
 import chess.position.Row;
+import chess.turn.Turn;
 import java.util.Map;
 
 public class BoardView {
@@ -48,5 +49,9 @@ public class BoardView {
             }
             System.out.println();
         }
+    }
+
+    public void displayTurn(final Turn turn) {
+        System.out.println(turn.getName() + "의 차례입니다.");
     }
 }

@@ -21,6 +21,8 @@ public class Application {
         boardView.display(board.getBoard());
 
         while (true) {
+            boardView.displayTurn(board.getTurn());
+
             final String startInfo = inputView.readStartPosition();
             final String endInfo = inputView.readEndPosition();
 
