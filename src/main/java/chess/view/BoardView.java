@@ -11,16 +11,6 @@ import java.util.Map;
 
 public class BoardView {
 
-    private static final Map<Row, String> ROW_NAME = Map.of(
-            Row.EIGHT, "8",
-            Row.SEVEN, "7",
-            Row.SIX, "6",
-            Row.FIVE, "5",
-            Row.FOUR, "4",
-            Row.THREE, "3",
-            Row.TWO, "2",
-            Row.ONE, "1"
-    );
     private static final Map<Type, String> PIECE_NAME = Map.of(
             Type.BISHOP, "b",
             Type.KING, "k",
@@ -34,21 +24,33 @@ public class BoardView {
         System.out.println();
         System.out.println("   a b c d e f g h");
         for (Row row : Row.values()) {
-            System.out.print(ROW_NAME.get(row) + "  ");
-            for (Column column : Column.values()) {
-                if (board.containsKey(new Position(row, column))) {
-                    final Piece piece = board.get(new Position(row, column));
-                    if (piece.isColor(Color.WHITE)) {
-                        System.out.print(PIECE_NAME.get(piece.type()) + " ");
-                        continue;
-                    }
-                    System.out.print(PIECE_NAME.get(piece.type()).toUpperCase() + " ");
-                    continue;
-                }
-                System.out.print("_ ");
-            }
-            System.out.println();
+            System.out.print(row.ordinal() + 1 + "  ");
+            printRow(board, row);
         }
+    }
+
+    private static void printRow(final Map<Position, Piece> board, final Row row) {
+        for (Column column : Column.values()) {
+            printColumn(board, row, column);
+        }
+        System.out.println();
+    }
+
+    private static void printColumn(final Map<Position, Piece> board, final Row row, final Column column) {
+        if (board.containsKey(new Position(row, column))) {
+            displayPiece(board, row, column);
+            return;
+        }
+        System.out.print("_ ");
+    }
+
+    private static void displayPiece(final Map<Position, Piece> board, final Row row, final Column column) {
+        final Piece piece = board.get(new Position(row, column));
+        if (piece.isColor(Color.WHITE)) {
+            System.out.print(PIECE_NAME.get(piece.type()) + " ");
+            return;
+        }
+        System.out.print(PIECE_NAME.get(piece.type()).toUpperCase() + " ");
     }
 
     public void displayTurn(final Turn turn) {
