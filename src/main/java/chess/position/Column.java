@@ -1,33 +1,30 @@
 package chess.position;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public enum Column {
 
-    A(1),
-    B(2),
-    C(3),
-    D(4),
-    E(5),
-    F(6),
-    G(7),
-    H(8);
+    A("a"),
+    B("b"),
+    C("c"),
+    D("d"),
+    E("e"),
+    F("f"),
+    G("g"),
+    H("h");
 
-    private final int value;
+    private final String value;
 
-    Column(final int value) {
+    Column(final String value) {
         this.value = value;
     }
 
-    public static Column of(int input) {
+    public static Column of(String input) {
         return Arrays.stream(values())
-                .filter(row -> row.value == input)
+                .filter(row -> row.value.equals(input))
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("[ERROR] 잘못된 값을 입력했습니다."));
-    }
-
-    public int getValue() {
-        return value;
     }
 
     public boolean isFarLeft() {
@@ -68,5 +65,19 @@ public enum Column {
         }
 
         throw new IllegalStateException("움직일 수 없는 위치입니다.");
+    }
+
+    public int getInt() {
+        Map<Column, Integer> map = Map.of(
+                A, 1,
+                B, 2,
+                C, 3,
+                D, 4,
+                E, 5,
+                F, 6,
+                G, 7,
+                H, 8
+        );
+        return map.get(this);
     }
 }

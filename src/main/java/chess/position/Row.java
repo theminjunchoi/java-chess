@@ -4,30 +4,26 @@ import java.util.Arrays;
 
 public enum Row {
 
-    EIGHT(8),
-    SEVEN(7),
-    SIX(6),
-    FIVE(5),
-    FOUR(4),
-    THREE(3),
-    TWO(2),
-    ONE(1);
+    EIGHT("8"),
+    SEVEN("7"),
+    SIX("6"),
+    FIVE("5"),
+    FOUR("4"),
+    THREE("3"),
+    TWO("2"),
+    ONE("1");
 
-    private final int value;
+    private final String value;
 
-    Row(final int value) {
+    Row(final String value) {
         this.value = value;
     }
 
-    public static Row of(int input) {
+    public static Row of(String input) {
         return Arrays.stream(values())
-                .filter(row -> row.value == input)
+                .filter(row -> row.value.equals(input))
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("[ERROR] 잘못된 값을 입력했습니다."));
-    }
-
-    public int getValue() {
-        return value;
     }
 
     public boolean isTop() {
@@ -68,5 +64,9 @@ public enum Row {
         }
 
         throw new IllegalStateException("움직일 수 없는 위치입니다.");
+    }
+
+    public int getInt() {
+        return Integer.parseInt(value);
     }
 }

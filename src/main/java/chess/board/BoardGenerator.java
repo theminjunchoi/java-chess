@@ -1,13 +1,14 @@
 package chess.board;
 
 import chess.piece.Bishop;
+import chess.piece.BlackPawn;
 import chess.piece.Color;
 import chess.piece.King;
 import chess.piece.Knight;
-import chess.piece.Pawn;
 import chess.piece.Piece;
 import chess.piece.Queen;
 import chess.piece.Rook;
+import chess.piece.WhitePawn;
 import chess.position.Column;
 import chess.position.Position;
 import chess.position.Row;
@@ -30,14 +31,14 @@ public class BoardGenerator {
         board.put(new Position(Row.ONE, Column.D), new Queen(Color.WHITE));
         board.put(new Position(Row.ONE, Column.E), new King(Color.WHITE));
 
-        board.put(new Position(Row.TWO, Column.A), new Pawn(Color.WHITE));
-        board.put(new Position(Row.TWO, Column.B), new Pawn(Color.WHITE));
-        board.put(new Position(Row.TWO, Column.C), new Pawn(Color.WHITE));
-        board.put(new Position(Row.TWO, Column.D), new Pawn(Color.WHITE));
-        board.put(new Position(Row.TWO, Column.E), new Pawn(Color.WHITE));
-        board.put(new Position(Row.TWO, Column.F), new Pawn(Color.WHITE));
-        board.put(new Position(Row.TWO, Column.G), new Pawn(Color.WHITE));
-        board.put(new Position(Row.TWO, Column.H), new Pawn(Color.WHITE));
+        board.put(new Position(Row.TWO, Column.A), new WhitePawn());
+        board.put(new Position(Row.TWO, Column.B), new WhitePawn());
+        board.put(new Position(Row.TWO, Column.C), new WhitePawn());
+        board.put(new Position(Row.TWO, Column.D), new WhitePawn());
+        board.put(new Position(Row.TWO, Column.E), new WhitePawn());
+        board.put(new Position(Row.TWO, Column.F), new WhitePawn());
+        board.put(new Position(Row.TWO, Column.G), new WhitePawn());
+        board.put(new Position(Row.TWO, Column.H), new WhitePawn());
 
         // 검정색
         board.put(new Position(Row.EIGHT, Column.A), new Rook(Color.BLACK));
@@ -52,14 +53,14 @@ public class BoardGenerator {
         board.put(new Position(Row.EIGHT, Column.D), new Queen(Color.BLACK));
         board.put(new Position(Row.EIGHT, Column.E), new King(Color.BLACK));
 
-        board.put(new Position(Row.SEVEN, Column.A), new Pawn(Color.BLACK));
-        board.put(new Position(Row.SEVEN, Column.B), new Pawn(Color.BLACK));
-        board.put(new Position(Row.SEVEN, Column.C), new Pawn(Color.BLACK));
-        board.put(new Position(Row.SEVEN, Column.D), new Pawn(Color.BLACK));
-        board.put(new Position(Row.SEVEN, Column.E), new Pawn(Color.BLACK));
-        board.put(new Position(Row.SEVEN, Column.F), new Pawn(Color.BLACK));
-        board.put(new Position(Row.SEVEN, Column.G), new Pawn(Color.BLACK));
-        board.put(new Position(Row.SEVEN, Column.H), new Pawn(Color.BLACK));
+        board.put(new Position(Row.SEVEN, Column.A), new BlackPawn());
+        board.put(new Position(Row.SEVEN, Column.B), new BlackPawn());
+        board.put(new Position(Row.SEVEN, Column.C), new BlackPawn());
+        board.put(new Position(Row.SEVEN, Column.D), new BlackPawn());
+        board.put(new Position(Row.SEVEN, Column.E), new BlackPawn());
+        board.put(new Position(Row.SEVEN, Column.F), new BlackPawn());
+        board.put(new Position(Row.SEVEN, Column.G), new BlackPawn());
+        board.put(new Position(Row.SEVEN, Column.H), new BlackPawn());
 
         return new Board(board);
     }

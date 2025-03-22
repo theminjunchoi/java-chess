@@ -44,7 +44,7 @@ public class BoardView {
                     System.out.print(PIECE_NAME.get(piece.type()).toUpperCase() + " ");
                     continue;
                 }
-                System.out.print("  ");
+                System.out.print("_ ");
             }
             System.out.println();
         }

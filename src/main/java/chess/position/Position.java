@@ -10,6 +10,13 @@ public record Position(
         this(column, row);
     }
 
+    public static Position of(final String input) {
+        return new Position(
+                Row.of(String.valueOf(input.charAt(0))),
+                Column.of(String.valueOf(input.charAt(1)))
+        );
+    }
+
     public boolean canMoveUp() {
         return row.canMoveUp(1);
     }
@@ -171,7 +178,7 @@ public record Position(
     }
 
     public Vector subtract(final Position another) {
-        return new Vector(this.row.getValue() - another.row.getValue(),
-                this.column.getValue() - another.column.getValue());
+        return new Vector(this.row.getInt() - another.row.getInt(),
+                this.column.getInt() - another.column.getInt());
     }
 }
