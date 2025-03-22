@@ -33,6 +33,10 @@ public class Vector {
         return y == 0;
     }
 
+    public boolean isDiagonal() {
+        return Math.abs(x) == Math.abs(y);
+    }
+
     public int x() {
         return x;
     }
