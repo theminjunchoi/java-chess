@@ -24,14 +24,24 @@ public class Application {
             boardView.displayTurn(board.getTurn());
 
             final String startInfo = inputView.readStartPosition();
+            if (startInfo.equals("end")) {
+                System.out.println("프로그램을 종료합니다.");
+                return;
+            }
             final String endInfo = inputView.readEndPosition();
-
             final Position start = Position.of(startInfo.replace(" ", ""));
             final Position end = Position.of(endInfo.replace(" ", ""));
 
-            board.move(start, end);
+            move(board, start, end);
+        }
+    }
 
+    private void move(final Board board, final Position start, final Position end) {
+        try {
+            board.move(start, end);
             boardView.display(board.getBoard());
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
