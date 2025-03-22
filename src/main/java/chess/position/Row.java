@@ -38,10 +38,6 @@ public enum Row {
         return ordinal() - step >= 0;
     }
 
-    public Row moveUp() {
-        return moveUp(1);
-    }
-
     public Row moveUp(final int step) {
         if (canMoveUp(step)) {
             return values()[ordinal() - step];
@@ -52,10 +48,6 @@ public enum Row {
 
     public boolean canMoveDown(final int step) {
         return ordinal() + step < values().length;
-    }
-
-    public Row moveDown() {
-        return moveDown(1);
     }
 
     public Row moveDown(final int step) {
