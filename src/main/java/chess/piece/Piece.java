@@ -5,7 +5,7 @@ import chess.position.Position;
 
 public abstract class Piece {
 
-    private final Color color;
+    protected final Color color;
 
     public Piece(final Color color) {
         this.color = color;
@@ -18,4 +18,8 @@ public abstract class Piece {
     public abstract Type type();
 
     public abstract boolean canMove(final Position start, final Position end, final Board board);
+
+    public boolean isSameTeam(final Color color) {
+        return this.color == color;
+    }
 }

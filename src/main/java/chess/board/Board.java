@@ -1,5 +1,6 @@
 package chess.board;
 
+import chess.piece.Color;
 import chess.piece.Piece;
 import chess.position.Position;
 import chess.turn.Turn;
@@ -29,6 +30,7 @@ public class Board {
         board.remove(start);
         board.remove(end);
         board.put(end, piece);
+        turn.changeTurn(this);
     }
 
     private void validateIsExist(final Position start) {
@@ -57,7 +59,11 @@ public class Board {
         this.turn = turn;
     }
 
-    public boolean isPieceExist(final Position position) {
-        return board.containsKey(position);
+    public boolean isExistSameTeam(final Position position, final Color color) {
+        if (board.containsKey(position)) {
+            final Piece piece = board.get(position);
+            return piece.isSameTeam(color);
+        }
+        return false;
     }
 }

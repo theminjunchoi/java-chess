@@ -27,7 +27,7 @@ public class Rook extends Piece {
             if (y > 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
                     route = route.moveUp();
-                    if (board.isPieceExist(route)) {
+                    if (board.isExistSameTeam(route, color)) {
                         return false;
                     }
                 }
@@ -35,7 +35,7 @@ public class Rook extends Piece {
             if (y < 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
                     route = route.moveDown();
-                    if (board.isPieceExist(route)) {
+                    if (board.isExistSameTeam(route, color)) {
                         return false;
                     }
                 }
@@ -46,7 +46,7 @@ public class Rook extends Piece {
             if (x > 0) {
                 for (int i = 0; i < Math.abs(x); i++) {
                     route = route.moveRight();
-                    if (board.isPieceExist(route)) {
+                    if (board.isExistSameTeam(route, color)) {
                         return false;
                     }
                 }
@@ -54,7 +54,7 @@ public class Rook extends Piece {
             if (x < 0) {
                 for (int i = 0; i < Math.abs(x); i++) {
                     route = route.moveLeft();
-                    if (board.isPieceExist(route)) {
+                    if (board.isExistSameTeam(route, color)) {
                         return false;
                     }
                 }

@@ -22,7 +22,7 @@ public class WhitePawn extends Piece {
     public boolean canMove(final Position start, final Position end, final Board board) {
         final Vector v = end.subtract(start);
         if (v.equals(new Vector(1, -1)) || v.equals(new Vector(1, 1))) {
-            if (!board.isPieceExist(end)) {
+            if (!board.isExistSameTeam(end, color)) {
                 throw new IllegalArgumentException("[ERROR] 대각선은 다른 기물을 잡을 때만 이동가능합니다.");
             }
         }
@@ -33,7 +33,7 @@ public class WhitePawn extends Piece {
             return true;
         }
         if (v.equals(new Vector(1, 0))) {
-            if (board.isPieceExist(end)) {
+            if (board.isExistSameTeam(end, color)) {
                 throw new IllegalArgumentException("[ERROR] 다른 기물이 존재합니다.");
             }
             return true;

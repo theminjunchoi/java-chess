@@ -58,4 +58,8 @@ public class Vector {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
+    public boolean isOneLength() {
+        return Math.abs(x) <= 1 && Math.abs(y) <= 1;
+    }
 }

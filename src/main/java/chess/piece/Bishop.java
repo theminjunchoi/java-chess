@@ -28,7 +28,7 @@ public class Bishop extends Piece {
             if (y > 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
                     route = route.moveLeftUp();
-                    if (board.isPieceExist(route)) {
+                    if (board.isExistSameTeam(route, color)) {
                         return false;
                     }
                 }
@@ -36,7 +36,7 @@ public class Bishop extends Piece {
             if (y < 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
                     route = route.moveLeftDown();
-                    if (board.isPieceExist(route)) {
+                    if (board.isExistSameTeam(route, color)) {
                         return false;
                     }
                 }
@@ -46,7 +46,7 @@ public class Bishop extends Piece {
             if (y > 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
                     route = route.moveRightUp();
-                    if (board.isPieceExist(route)) {
+                    if (board.isExistSameTeam(route, color)) {
                         return false;
                     }
                 }
@@ -54,7 +54,7 @@ public class Bishop extends Piece {
             if (y < 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
                     route = route.moveRightDown();
-                    if (board.isPieceExist(route)) {
+                    if (board.isExistSameTeam(route, color)) {
                         return false;
                     }
                 }
