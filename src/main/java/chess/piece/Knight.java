@@ -1,5 +1,15 @@
 package chess.piece;
 
-public class Knight {
+import chess.Color;
 
+public class Knight extends Piece {
+
+    public Knight(final Color color) {
+        super(color);
+    }
+
+    @Override
+    public Type type() {
+        return Type.KNIGHT;
+    }
 }

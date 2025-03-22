@@ -1,7 +1,26 @@
 # java-chess
 
-체스 미션 저장소
+## 기능 구현 사항
 
-## 우아한테크코스 코드리뷰
+### 게임 화면
 
-- [온라인 코드 리뷰 과정](https://github.com/woowacourse/woowacourse-docs/blob/master/maincourse/README.md)
+```aiignore
+white: lowerCase
+black: upperCase
+
+   a b c d e f g h
+8  R B N Q K N B R
+7  P P P P P P P P
+6
+5
+4
+3
+2  p p p p p p p p
+1  r b n q k n b r
+```
+
+### 출력
+
+- [x] 보드 출력하기
+
+### 움직임 구현
