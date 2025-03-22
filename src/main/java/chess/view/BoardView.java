@@ -47,13 +47,18 @@ public class BoardView {
     private static void displayPiece(final Map<Position, Piece> board, final Row row, final Column column) {
         final Piece piece = board.get(new Position(row, column));
         if (piece.isColor(Color.WHITE)) {
-            System.out.print(PIECE_NAME.get(piece.type()) + " ");
+            System.out.print("\u001B[34m" + PIECE_NAME.get(piece.type()) + " \u001B[0m");
             return;
         }
-        System.out.print(PIECE_NAME.get(piece.type()).toUpperCase() + " ");
+        System.out.print("\u001B[31m" + PIECE_NAME.get(piece.type()).toUpperCase() + " \u001B[0m");
     }
 
     public void displayTurn(final Turn turn) {
-        System.out.println(turn.getName() + "의 차례입니다.");
+        final String team = turn.getName();
+        if (team.equals("백팀")) {
+            System.out.println("\u001B[34m" + team + "\u001B[0m" + "의 차례입니다.");
+            return;
+        }
+        System.out.println("\u001B[31m" + team + "\u001B[0m" + "의 차례입니다.");
     }
 }

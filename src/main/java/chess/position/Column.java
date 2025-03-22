@@ -4,24 +4,18 @@ import java.util.Arrays;
 
 public enum Column {
 
-    A("a"),
-    B("b"),
-    C("c"),
-    D("d"),
-    E("e"),
-    F("f"),
-    G("g"),
-    H("h");
-
-    private final String value;
-
-    Column(final String value) {
-        this.value = value;
-    }
-
+    A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H;
+    
     public static Column of(String input) {
         return Arrays.stream(values())
-                .filter(row -> row.value.equals(input))
+                .filter(row -> row.toString().toLowerCase().equals(input))
                 .findAny()
                 .orElseThrow(() -> new IllegalArgumentException("[ERROR] 잘못된 값을 입력했습니다."));
     }
