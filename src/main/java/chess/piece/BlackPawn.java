@@ -22,9 +22,10 @@ public class BlackPawn extends Piece {
     public boolean canMove(final Position start, final Position end, final Board board) {
         final Vector v = end.subtract(start);
         if (v.equals(new Vector(-1, -1)) || v.equals(new Vector(-1, 1))) {
-            if (!board.isExistSameTeam(end, color)) {
+            if (board.isExistSameTeam(end, color)) {
                 throw new IllegalArgumentException("[ERROR] 대각선은 다른 기물을 잡을 때만 이동가능합니다.");
             }
+            return true;
         }
         if (v.equals(new Vector(-2, 0))) {
             if (!isFirstMove) {

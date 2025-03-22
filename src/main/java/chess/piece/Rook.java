@@ -22,8 +22,9 @@ public class Rook extends Piece {
             throw new IllegalArgumentException("이동할 수 없는 위치입니다.");
         }
         Position route = start;
+        final int y = v.y();
+        final int x = v.x();
         if (v.isVertical()) {
-            final int y = v.y();
             if (y > 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
                     route = route.moveUp();
@@ -44,7 +45,6 @@ public class Rook extends Piece {
             }
         }
         if (v.isHorizontal()) {
-            final int x = v.x();
             if (x > 0) {
                 for (int i = 0; i < Math.abs(x); i++) {
                     route = route.moveRight();
