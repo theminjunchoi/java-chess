@@ -32,6 +32,7 @@ public class Bishop extends Piece {
                         return false;
                     }
                 }
+                return true;
             }
             if (y < 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
@@ -40,6 +41,7 @@ public class Bishop extends Piece {
                         return false;
                     }
                 }
+                return true;
             }
         }
         if (x > 0) {
@@ -50,6 +52,7 @@ public class Bishop extends Piece {
                         return false;
                     }
                 }
+                return true;
             }
             if (y < 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
@@ -58,6 +61,7 @@ public class Bishop extends Piece {
                         return false;
                     }
                 }
+                return true;
             }
         }
         return true;

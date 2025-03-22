@@ -31,6 +31,7 @@ public class Rook extends Piece {
                         return false;
                     }
                 }
+                return true;
             }
             if (y < 0) {
                 for (int i = 0; i < Math.abs(y); i++) {
@@ -39,6 +40,7 @@ public class Rook extends Piece {
                         return false;
                     }
                 }
+                return true;
             }
         }
         if (v.isHorizontal()) {
@@ -49,6 +51,7 @@ public class Rook extends Piece {
                     if (board.isExistSameTeam(route, color)) {
                         return false;
                     }
+                    return true;
                 }
             }
             if (x < 0) {
@@ -58,6 +61,7 @@ public class Rook extends Piece {
                         return false;
                     }
                 }
+                return true;
             }
         }
         return true;
